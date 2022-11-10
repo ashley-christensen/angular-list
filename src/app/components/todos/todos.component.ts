@@ -18,8 +18,14 @@ export class TodosComponent implements OnInit {
 			},
 			{
 				content: 'Second todo',
-				completed: true,
+				completed: false,
 			},
 		];
+	}
+	toggleDone(id) {
+		this.todos.map((v, i) => {
+			if (i == id) v.completed = !v.completed;
+			return v;
+		});
 	}
 }
